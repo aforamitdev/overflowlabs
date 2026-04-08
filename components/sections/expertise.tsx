@@ -58,23 +58,23 @@ export function Expertise() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section id="expertise" className="pt-20 lg:pt-32 pb-20 lg:pb-28">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-        <h2 className="font-light tracking-[-0.02em] text-stone-950 text-5xl md:text-6xl lg:text-7xl">
+    <section id="expertise" className="pt-16 sm:pt-20 lg:pt-32 pb-16 sm:pb-20 lg:pb-28">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-6 lg:px-10">
+        <h2 className="font-light tracking-[-0.02em] text-stone-950 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
           Our Expertise
           <sup className="text-xs align-super text-stone-500 ml-1 tracking-normal">[03]</sup>
         </h2>
 
-        <div className="mt-14 lg:mt-20 border-t border-stone-300/70">
+        <div className="mt-10 sm:mt-14 lg:mt-20 border-t border-stone-300/70">
           {items.map((item, i) => {
             const isOpen = open === i
             return (
               <div key={item.title} className="border-b border-stone-300/70">
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between gap-6 py-7 lg:py-9 text-left"
+                  className="w-full flex items-center justify-between gap-4 sm:gap-6 py-6 sm:py-7 lg:py-9 text-left"
                 >
-                  <h3 className="font-light tracking-[-0.02em] text-3xl md:text-4xl lg:text-5xl text-stone-950 max-w-[80%]">
+                  <h3 className="font-light tracking-[-0.02em] text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-stone-950 flex-1 min-w-0">
                     {item.title}
                   </h3>
                   <div className="shrink-0 flex size-9 items-center justify-center border border-stone-400 text-stone-700">
@@ -120,7 +120,7 @@ export function Expertise() {
                             ))}
                           </ul>
                           <a
-                            href="#contact"
+                            href="/contact"
                             className="mt-6 inline-flex items-center gap-2 bg-stone-950 text-white text-[11px] uppercase tracking-wider px-5 py-2.5 hover:bg-stone-800 transition-colors"
                           >
                             Learn More

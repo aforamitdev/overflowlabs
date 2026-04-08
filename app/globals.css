@@ -9,6 +9,48 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hero video animations */
+@keyframes hv-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(8px, -12px); }
+}
+@keyframes hv-drift-2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-10px, 14px); }
+}
+@keyframes hv-pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.55; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@keyframes hv-pulse-dot {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+@keyframes hv-flow {
+  to { stroke-dashoffset: -40; }
+}
+@keyframes hv-orb {
+  0%, 100% { transform: scale(1); opacity: 0.35; }
+  50% { transform: scale(1.18); opacity: 0.55; }
+}
+@keyframes hv-scan {
+  0% { transform: translateY(-10%); opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { transform: translateY(110%); opacity: 0; }
+}
+@keyframes hv-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+@keyframes hv-bar {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+@keyframes hv-grid-pan {
+  to { background-position: 60px 60px; }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

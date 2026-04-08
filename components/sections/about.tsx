@@ -7,15 +7,15 @@ const stats = [
 
 export function About() {
   return (
-    <section id="about" className="relative pt-20 lg:pt-32 pb-16 lg:pb-24">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+    <section id="about" className="relative pt-16 sm:pt-20 lg:pt-32 pb-14 sm:pb-16 lg:pb-24">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-6 lg:px-10">
         {/* Heading */}
-        <h2 className="font-light tracking-[-0.02em] text-stone-950 text-5xl md:text-6xl lg:text-7xl">
+        <h2 className="font-light tracking-[-0.02em] text-stone-950 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
           About Us<sup className="text-xs align-super text-stone-500 ml-1 tracking-normal">[01]</sup>
         </h2>
 
         {/* 3-column row */}
-        <div className="mt-12 lg:mt-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+        <div className="mt-10 sm:mt-12 lg:mt-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
           {/* Image left */}
           <div className="md:col-span-3 aspect-[4/5] md:aspect-square bg-gradient-to-br from-amber-200 via-stone-300 to-stone-500 relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.4),transparent_60%)]" />
@@ -55,14 +55,14 @@ export function About() {
         </div>
 
         {/* Stats row */}
-        <div className="mt-20 lg:mt-28 grid grid-cols-2 md:grid-cols-4 gap-y-10">
+        <div className="mt-16 sm:mt-20 lg:mt-28 grid grid-cols-2 md:grid-cols-4 gap-y-8 sm:gap-y-10 gap-x-4">
           {stats.map((s) => (
             <div key={s.label}>
-              <div className="text-stone-950 font-light tracking-[-0.02em] text-5xl md:text-6xl">
+              <div className="text-stone-950 font-light tracking-[-0.02em] text-4xl sm:text-5xl md:text-6xl">
                 {s.value}
-                <sup className="text-xl text-stone-500 align-super">{s.suffix}</sup>
+                <sup className="text-lg sm:text-xl text-stone-500 align-super">{s.suffix}</sup>
               </div>
-              <div className="mt-2 text-[11px] uppercase tracking-wider text-stone-600">
+              <div className="mt-2 text-[10px] sm:text-[11px] uppercase tracking-wider text-stone-600">
                 {s.label}
               </div>
             </div>

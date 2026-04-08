@@ -1,18 +1,20 @@
-const footerCols = [
-  {
-    title: "Navigation",
-    links: ["Home", "Studio", "Works", "Services", "Process", "Contact"],
-  },
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Journal", href: "/blog" },
+  { label: "Services", href: "/#expertise" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/contact" },
 ]
 
 export function Footer() {
   return (
     <footer className="bg-[#0e0e0e] text-stone-200">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 pt-16 lg:pt-24 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-6 lg:px-10 pt-14 sm:pt-16 lg:pt-24 pb-10">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-8">
           {/* Wordmark */}
-          <div className="md:col-span-5">
-            <div className="font-light tracking-[-0.04em] text-stone-50 text-6xl md:text-7xl lg:text-8xl leading-[0.85]">
+          <div className="col-span-2 md:col-span-5">
+            <div className="font-light tracking-[-0.04em] text-stone-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.85]">
               OVERFLOW
               <br />
               LABS<span className="text-stone-500">.</span>
@@ -20,7 +22,7 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="md:col-span-3 text-[11px] uppercase tracking-wider text-stone-500 space-y-6">
+          <div className="col-span-2 md:col-span-3 text-[11px] uppercase tracking-wider text-stone-500 space-y-6">
             <div>
               <div className="text-stone-400 mb-2">Contact</div>
               <div className="text-stone-200 normal-case tracking-normal text-[13px]">
@@ -50,10 +52,10 @@ export function Footer() {
           <div className="md:col-span-2 text-[11px] uppercase tracking-wider">
             <div className="text-stone-500 mb-4">Navigation</div>
             <ul className="space-y-2 text-stone-200">
-              {footerCols[0].links.map((l) => (
-                <li key={l}>
-                  <a href="#" className="hover:text-white transition-colors">
-                    {l}
+              {navLinks.map((l) => (
+                <li key={l.label}>
+                  <a href={l.href} className="hover:text-white transition-colors">
+                    {l.label}
                   </a>
                 </li>
               ))}
@@ -79,14 +81,14 @@ export function Footer() {
         <div className="mt-16 pt-6 border-t border-stone-800/80 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[11px] text-stone-500">
           <div>© 2026 Overflow Labs. All rights reserved.</div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-stone-200 transition-colors">
+            <a href="/privacy" className="hover:text-stone-200 transition-colors">
               Privacy
             </a>
-            <a href="#" className="hover:text-stone-200 transition-colors">
+            <a href="/terms" className="hover:text-stone-200 transition-colors">
               Terms
             </a>
-            <a href="#" className="hover:text-stone-200 transition-colors">
-              Cookies
+            <a href="/contact" className="hover:text-stone-200 transition-colors">
+              Contact
             </a>
           </div>
         </div>
