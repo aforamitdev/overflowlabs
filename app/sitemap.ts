@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/contact`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${BASE_URL}/privacy`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE_URL}/terms`, changeFrequency: "yearly", priority: 0.3 },
-  ].map((r) => ({ ...r, lastModified: now }))
+  ].map((r) => ({ ...r, lastModified: now })) as MetadataRoute.Sitemap
 
   const caseStudyRoutes: MetadataRoute.Sitemap = caseStudies.map((cs) => ({
     url: `${BASE_URL}/case-studies/${cs.slug}`,
