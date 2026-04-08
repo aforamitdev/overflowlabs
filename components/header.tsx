@@ -1,0 +1,108 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { Menu, X } from "lucide-react"
+import { cn } from "@/lib/utils"
+
+const colA = [
+  { label: "Home", href: "#" },
+  { label: "Studio", href: "#about" },
+  { label: "Works", href: "#projects" },
+]
+
+const colB = [
+  { label: "Services", href: "#expertise" },
+  { label: "Process", href: "#expertise" },
+  { label: "Contact", href: "#contact" },
+]
+
+export function Header() {
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : ""
+    return () => { document.body.style.overflow = "" }
+  }, [open])
+
+  return (
+    <header className="absolute top-0 inset-x-0 z-50">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 pt-6 lg:pt-8">
+        <div className="flex items-start justify-between">
+          {/* Left columns */}
+          <div className="hidden md:flex items-start gap-10 text-[11px] leading-[1.6] tracking-wide uppercase text-stone-700">
+            <ul className="space-y-0.5">
+              {colA.map((i) => (
+                <li key={i.label}>
+                  <Link href={i.href} className="hover:text-stone-950 transition-colors">
+                    {i.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="space-y-0.5">
+              {colB.map((i) => (
+                <li key={i.label}>
+                  <Link href={i.href} className="hover:text-stone-950 transition-colors">
+                    {i.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Wordmark right */}
+          <Link
+            href="/"
+            className="text-[11px] md:text-xs font-bold tracking-[0.08em] text-stone-950 leading-[1.15] text-right"
+          >
+            OVERFLOW
+            <br />
+            LABS<span className="text-stone-500">.</span>
+          </Link>
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden absolute left-6 top-6 flex size-9 items-center justify-center border border-stone-400/50 text-stone-800 hover:bg-stone-200/50 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="size-4" /> : <Menu className="size-4" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile drawer */}
+      <div
+        className={cn(
+          "fixed inset-0 z-40 md:hidden transition-all duration-300",
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        )}
+      >
+        <div
+          className="absolute inset-0 bg-stone-950/30 backdrop-blur-sm"
+          onClick={() => setOpen(false)}
+        />
+        <div
+          className={cn(
+            "absolute top-0 left-0 right-0 bg-[#ece6d6] border-b border-stone-300 transition-transform duration-300 pt-20 pb-10 px-8",
+            open ? "translate-y-0" : "-translate-y-full"
+          )}
+        >
+          <nav className="flex flex-col gap-1 text-stone-900">
+            {[...colA, ...colB].map((i) => (
+              <Link
+                key={i.label}
+                href={i.href}
+                onClick={() => setOpen(false)}
+                className="py-3 text-2xl font-light tracking-tight border-b border-stone-300/60"
+              >
+                {i.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </header>
+  )
+}
