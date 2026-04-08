@@ -12,6 +12,11 @@ const colA = [
 ]
 
 const colB = [
+  { label: "For Startups", href: "/for-startups" },
+  { label: "For Enterprise", href: "/for-enterprise" },
+]
+
+const colC = [
   { label: "Services", href: "/#expertise" },
   { label: "About", href: "/#about" },
   { label: "Contact", href: "/contact" },
@@ -58,6 +63,15 @@ export function Header() {
                 </li>
               ))}
             </ul>
+            <ul className="space-y-0.5">
+              {colC.map((i) => (
+                <li key={i.label}>
+                  <Link href={i.href} className="hover:text-stone-950 transition-colors">
+                    {i.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Wordmark right */}
@@ -90,7 +104,7 @@ export function Header() {
           )}
         >
           <nav className="flex flex-col gap-1 text-stone-900">
-            {[...colA, ...colB].map((i) => (
+            {[...colA, ...colB, ...colC].map((i) => (
               <Link
                 key={i.label}
                 href={i.href}
