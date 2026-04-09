@@ -3,10 +3,28 @@ import { ArrowUpRight } from "lucide-react"
 import { PageShell } from "@/components/page-shell"
 import { caseStudies } from "@/lib/content"
 
-export const metadata = {
-  title: "Case Studies — Overflow Labs",
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Case Studies",
   description:
-    "How we've shipped AI systems for fintech, manufacturing, insurance, and healthcare clients.",
+    "Production AI work shipped by Overflow Labs — forecasting, computer vision, document intelligence, and RAG search across fintech, manufacturing, insurance, and healthcare.",
+  keywords: [
+    "AI case studies",
+    "machine learning case studies",
+    "production AI",
+    "AI consulting portfolio",
+    "RAG case study",
+    "computer vision case study",
+    "Overflow Labs",
+  ],
+  alternates: { canonical: "/case-studies" },
+  openGraph: {
+    title: "Case Studies — Overflow Labs",
+    description: "Production AI work shipped across fintech, manufacturing, insurance, and healthcare.",
+    url: "/case-studies",
+    type: "website",
+  },
 }
 
 export default function CaseStudiesIndex() {

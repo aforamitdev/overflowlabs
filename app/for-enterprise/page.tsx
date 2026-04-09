@@ -10,10 +10,30 @@ import {
 } from "lucide-react"
 import { PageShell } from "@/components/page-shell"
 
-export const metadata = {
-  title: "For Enterprise — Overflow Labs",
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Custom AI for Enterprise",
   description:
-    "We embed with operations teams, study how work actually gets done, and ship custom AI systems that compress the busywork — so your people can focus on the work that compounds.",
+    "Overflow Labs embeds with enterprise operations teams, studies how work actually runs, and ships custom AI systems that compress the busywork. Bespoke automation built around your workflows.",
+  keywords: [
+    "enterprise AI consulting",
+    "custom AI solutions",
+    "AI process automation",
+    "enterprise AI integration",
+    "operations AI",
+    "business process AI",
+    "AI for operations",
+    "Overflow Labs",
+  ],
+  alternates: { canonical: "/for-enterprise" },
+  openGraph: {
+    title: "Custom AI for Enterprise — Overflow Labs",
+    description:
+      "We study how your business runs, then engineer the AI that makes it run faster.",
+    url: "/for-enterprise",
+    type: "website",
+  },
 }
 
 const principles = [

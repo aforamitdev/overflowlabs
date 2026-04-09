@@ -1,4 +1,6 @@
+import type { Metadata } from "next"
 import Link from "next/link"
+import Script from "next/script"
 import { notFound } from "next/navigation"
 import { ArrowLeft, ArrowUpRight } from "lucide-react"
 import { Header } from "@/components/header"
@@ -13,13 +15,35 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>
-}) {
+}): Promise<Metadata> {
   const { slug } = await params
   const cs = caseStudies.find((c) => c.slug === slug)
   if (!cs) return {}
+  const url = `/case-studies/${cs.slug}`
   return {
-    title: `${cs.title} — Overflow Labs`,
+    title: cs.title,
     description: cs.summary,
+    keywords: [
+      cs.title,
+      cs.client,
+      cs.sector,
+      "AI case study",
+      "Overflow Labs",
+      ...cs.stack,
+    ],
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${cs.title} — Overflow Labs`,
+      description: cs.summary,
+      url,
+      type: "article",
+      publishedTime: `${cs.year}-01-01`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${cs.title} — Overflow Labs`,
+      description: cs.summary,
+    },
   }
 }
 
@@ -35,8 +59,34 @@ export default async function CaseStudyPage({
   const idx = caseStudies.findIndex((c) => c.slug === slug)
   const next = caseStudies[(idx + 1) % caseStudies.length]
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: cs.title,
+    description: cs.summary,
+    author: { "@type": "Organization", name: "Overflow Labs" },
+    publisher: {
+      "@type": "Organization",
+      name: "Overflow Labs",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://overflowlabs.org/favicon.ico",
+      },
+    },
+    datePublished: `${cs.year}-01-01`,
+    mainEntityOfPage: `https://overflowlabs.org/case-studies/${cs.slug}`,
+    keywords: [cs.sector, cs.client, ...cs.stack].join(", "),
+    about: cs.sector,
+  }
+
   return (
     <>
+      <Script
+        id={`ld-case-${cs.slug}`}
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Header />
       <main className="pt-24 sm:pt-28 lg:pt-40">
         {/* Hero */}

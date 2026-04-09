@@ -1,9 +1,19 @@
 import { Mail, Phone, MapPin, Calendar } from "lucide-react"
 import { PageShell } from "@/components/page-shell"
 
-export const metadata = {
-  title: "Contact — Overflow Labs",
-  description: "Tell us about your project. We reply to every enquiry within 24 hours.",
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Tell us about your AI project. Every enquiry is read by a partner — not a sales team — and we reply within 24 hours.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact — Overflow Labs",
+    description: "Tell us about your AI project. We reply within 24 hours.",
+    url: "/contact",
+    type: "website",
+  },
 }
 
 const channels = [

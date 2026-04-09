@@ -1,8 +1,14 @@
 import { PageShell } from "@/components/page-shell"
 import { LegalDocument } from "@/components/legal-document"
 
-export const metadata = {
-  title: "Privacy Policy — Overflow Labs",
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "How Overflow Labs collects, uses, and protects your personal information — and the rights you have over your data.",
+  alternates: { canonical: "/privacy" },
+  robots: { index: true, follow: true },
 }
 
 const sections = [

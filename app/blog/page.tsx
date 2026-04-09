@@ -3,10 +3,28 @@ import { ArrowUpRight } from "lucide-react"
 import { PageShell } from "@/components/page-shell"
 import { blogPosts } from "@/lib/content"
 
-export const metadata = {
-  title: "Journal — Overflow Labs",
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Journal",
   description:
-    "Notes on shipping AI systems in production — engineering, research, and process from the Overflow Labs team.",
+    "Notes on shipping AI systems in production — engineering, research, and process from the Overflow Labs team. RAG, agents, evals, MLOps, and applied LLMs.",
+  keywords: [
+    "AI engineering blog",
+    "applied AI",
+    "RAG",
+    "LLM evals",
+    "MLOps",
+    "AI agents",
+    "Overflow Labs journal",
+  ],
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Journal — Overflow Labs",
+    description: "Notes on shipping AI systems in production from the Overflow Labs team.",
+    url: "/blog",
+    type: "website",
+  },
 }
 
 const categories = ["All", "Engineering", "Research", "Strategy", "Process"]

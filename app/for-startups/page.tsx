@@ -10,10 +10,30 @@ import {
 } from "lucide-react"
 import { PageShell } from "@/components/page-shell"
 
-export const metadata = {
-  title: "For SaaS Startups — Overflow Labs",
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "AI for SaaS Startups",
   description:
-    "We help SaaS startups ship AI features their users actually want — without rebuilding the product or hiring a research team.",
+    "We help SaaS startups ship AI features their users actually want — RAG, copilots, agents, and platform foundations — without rebuilding the product or hiring a research team.",
+  keywords: [
+    "AI for SaaS",
+    "AI features for startups",
+    "RAG for SaaS",
+    "AI copilots",
+    "AI agents for startups",
+    "AI consulting for startups",
+    "make app AI ready",
+    "Overflow Labs",
+  ],
+  alternates: { canonical: "/for-startups" },
+  openGraph: {
+    title: "AI for SaaS Startups — Overflow Labs",
+    description:
+      "Ship AI features your users actually want — without rebuilding the product or hiring a research team.",
+    url: "/for-startups",
+    type: "website",
+  },
 }
 
 const capabilities = [
