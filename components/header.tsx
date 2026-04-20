@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 
 const colA = [
   { label: "Home", href: "/" },
+  { label: "Solutions", href: "/solutions" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Journal", href: "/blog" },
 ]
@@ -44,7 +45,7 @@ export function Header() {
           </button>
 
           {/* Left columns (desktop) */}
-          <div className="hidden md:flex items-start gap-10 text-[11px] leading-[1.6] tracking-wide uppercase text-stone-700">
+          <div className="hidden md:flex items-start gap-10 text-[10px] leading-[1.6] tracking-[0.18em] uppercase text-stone-700">
             <ul className="space-y-0.5">
               {colA.map((i) => (
                 <li key={i.label}>

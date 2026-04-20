@@ -4,7 +4,7 @@ export function CTA() {
   return (
     <section id="contact" className="px-5 sm:px-6 lg:px-10 pb-6">
       <div className="mx-auto max-w-[1400px]">
-        <div className="relative overflow-hidden min-h-[420px] sm:min-h-0 sm:aspect-[16/9] md:aspect-[21/9] bg-stone-950 border border-stone-300">
+        <div className="relative overflow-hidden min-h-[420px] sm:min-h-0 sm:aspect-[16/9] md:aspect-[21/9] bg-stone-950 border border-stone-700/50">
           {/* Mockup as background */}
           <div className="absolute inset-0 opacity-90">
             <AiMockup variant="hero" />

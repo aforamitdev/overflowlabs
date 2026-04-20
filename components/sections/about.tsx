@@ -7,7 +7,7 @@ const stats = [
 
 export function About() {
   return (
-    <section id="about" className="relative pt-16 sm:pt-20 lg:pt-32 pb-14 sm:pb-16 lg:pb-24">
+    <section id="about" className="relative pt-16 sm:pt-20 lg:pt-32 pb-16 sm:pb-20 lg:pb-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-6 lg:px-10">
         {/* Heading */}
         <h2 className="font-light tracking-[-0.02em] text-stone-950 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
@@ -32,8 +32,8 @@ export function About() {
             </p>
             <div className="pt-8">
               <a
-                href="#contact"
-                className="inline-flex items-center gap-2 bg-stone-950 text-white text-[12px] uppercase tracking-wider px-5 py-3 hover:bg-stone-800 transition-colors"
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-stone-950 text-white text-[11px] uppercase tracking-wider px-5 py-2.5 hover:bg-stone-800 transition-colors"
               >
                 Get to Know Us
               </a>

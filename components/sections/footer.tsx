@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="bg-[#0e0e0e] text-stone-200">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-6 lg:px-10 pt-14 sm:pt-16 lg:pt-24 pb-10">
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-10">
           {/* Wordmark */}
           <div className="col-span-2 md:col-span-5">
             <div className="font-light tracking-[-0.04em] text-stone-50 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.85]">

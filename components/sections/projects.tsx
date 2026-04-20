@@ -9,24 +9,28 @@ const projects = [
     client: "Series B Fintech",
     year: "2025",
     gradient: "from-blue-900 via-indigo-900 to-stone-900",
+    href: "/case-studies/atlas-forecasting",
   },
   {
     title: "Aurora Vision Platform",
     client: "Industrial Robotics",
     year: "2025",
     gradient: "from-amber-900 via-rose-900 to-stone-900",
+    href: "/case-studies/aurora-vision",
   },
   {
     title: "Lumen Document Intelligence",
     client: "Global Insurer",
     year: "2024",
     gradient: "from-emerald-900 via-teal-900 to-stone-900",
+    href: "/case-studies/lumen-document-intelligence",
   },
   {
     title: "Helix RAG Search",
     client: "Healthcare SaaS",
     year: "2024",
     gradient: "from-purple-900 via-violet-900 to-stone-900",
+    href: "/case-studies/helix-rag-search",
   },
 ]
 
@@ -55,11 +59,11 @@ export function Projects() {
           {projects.map((p, i) => (
             <a
               key={p.title}
-              href="#"
+              href={p.href}
               onMouseEnter={() => setHovered(i)}
               className={cn(
                 "group flex items-center justify-between gap-4 md:gap-6 py-6 md:py-7 lg:py-9 border-b border-stone-800/80 transition-colors",
-                hovered === i ? "text-stone-50" : "text-stone-600"
+                hovered === i ? "text-stone-50" : "text-stone-400"
               )}
             >
               <div className="flex items-center gap-3 sm:gap-5 lg:gap-7 min-w-0 flex-1">
@@ -85,7 +89,7 @@ export function Projects() {
                 <span
                   className={cn(
                     "transition-all duration-300",
-                    hovered === i ? "text-stone-300 translate-x-0" : "text-stone-600 -translate-x-2"
+                    hovered === i ? "text-stone-300 translate-x-0" : "text-stone-500 -translate-x-2"
                   )}
                 >
                   View Project →

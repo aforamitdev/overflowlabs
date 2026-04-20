@@ -3,9 +3,6 @@
 import { useState } from "react"
 import { Plus, X } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { AiMockup } from "@/components/ai-mockup"
-
-const variants = ["hero", "training", "agents", "embeddings"] as const
 
 const items = [
   {
@@ -55,7 +52,7 @@ const items = [
 ]
 
 export function Expertise() {
-  const [open, setOpen] = useState<number | null>(0)
+  const [open, setOpen] = useState<number | null>(null)
 
   return (
     <section id="expertise" className="pt-16 sm:pt-20 lg:pt-32 pb-16 sm:pb-20 lg:pb-28">
@@ -90,14 +87,10 @@ export function Expertise() {
                 >
                   <div className="overflow-hidden">
                     <div className="grid md:grid-cols-12 gap-8 lg:gap-12 pt-2">
-                      {/* AI mockup */}
-                      <div className="md:col-span-4 aspect-[4/3] relative overflow-hidden border border-stone-300">
-                        <AiMockup variant={variants[i % variants.length]} />
-                      </div>
                       {/* Copy */}
-                      <div className="md:col-span-8 grid sm:grid-cols-2 gap-8">
+                      <div className="md:col-span-10 md:col-start-2 grid sm:grid-cols-2 gap-8">
                         <div>
-                          <div className="text-[11px] uppercase tracking-wider text-stone-500 mb-3">
+                          <div className="text-[11px] uppercase tracking-[0.18em] text-stone-500 mb-3">
                             What we do
                           </div>
                           <p className="text-[13px] leading-[1.75] text-stone-700">
@@ -105,7 +98,7 @@ export function Expertise() {
                           </p>
                         </div>
                         <div>
-                          <div className="text-[11px] uppercase tracking-wider text-stone-500 mb-3">
+                          <div className="text-[11px] uppercase tracking-[0.18em] text-stone-500 mb-3">
                             Solutions
                           </div>
                           <ul className="space-y-2">

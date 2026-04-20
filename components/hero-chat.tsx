@@ -136,7 +136,7 @@ export function HeroChat() {
             >
               <AudioLines className="size-4" strokeWidth={1.5} />
             </button>
-            <div className="ml-1 sm:ml-2 flex items-center gap-2 border border-stone-400/70 px-2.5 sm:px-3 py-1.5 text-[10px] uppercase tracking-[0.12em] sm:tracking-[0.15em] text-stone-700 shrink-0">
+            <div className="ml-1 sm:ml-2 flex items-center gap-2 border border-stone-400/60 px-2.5 sm:px-3 py-1.5 text-[10px] uppercase tracking-[0.15em] text-stone-700 shrink-0">
               <div className="size-1 bg-stone-900" />
               Overflow · v4
             </div>
